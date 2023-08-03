@@ -10,7 +10,9 @@ import SearchRounded from '@mui/icons-material/SearchRounded';
 import { CssVarsProvider } from '@mui/joy';
 import Sheet from '@mui/joy/Sheet';
 import React from 'react';
-import BasicCard from '../components/BasicCard';
+import CampaignCard from '../components/CampaignCard';
+import AppliedCampaignCard from '../components/AppliedCampaignCard';
+import WorkCampaignCard from '../components/WorkCampaignCard';
 
 
 export default function TabsPageExample() {
@@ -75,7 +77,7 @@ export default function TabsPageExample() {
               color={index === 0 ? 'primary' : 'neutral'}
               sx={{ ml: 1 }}
             >
-              14
+              1
             </Chip>
           </Tab>
           <Tab indicatorInset>
@@ -86,7 +88,7 @@ export default function TabsPageExample() {
               color={index === 1 ? 'primary' : 'neutral'}
               sx={{ ml: 1 }}
             >
-              24
+              4
             </Chip>
           </Tab>
         </TabList>
@@ -108,7 +110,7 @@ export default function TabsPageExample() {
               textColor="text.primary"
               
             >
-              Deals panel
+              <WorkCampaignCard/>
             </Typography>
         
 
@@ -123,11 +125,13 @@ export default function TabsPageExample() {
               fontSize="lg"
               textColor="text.primary"
             >
-              <BasicCard/>
+              <CampaignCard/>
               <br/>
-              <BasicCard/>
+              <CampaignCard/>
               <br/>
-              <BasicCard/>
+              <AppliedCampaignCard/>
+              <br/>
+              <AppliedCampaignCard/>
             </Typography>
           </TabPanel>
         </Box>

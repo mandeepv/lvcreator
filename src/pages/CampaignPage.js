@@ -5,6 +5,10 @@ import { useState, useEffect } from 'react';
 import Typography from '@mui/joy/Typography';
 import '@fontsource/inter';
 import Button from '@mui/joy/Button';
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import ModalDialog from '@mui/joy/ModalDialog';
+import { Link } from 'react-router-dom';
 
 const CampaignPage = () => {
     const [campaignData, setCampaignData] = useState({
@@ -14,6 +18,11 @@ const CampaignPage = () => {
       startDate: '2023-06-01',
       endDate: '2023-08-30',
     });
+
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     useEffect(() => {
       // Load the campaign data here from an API or other data source
@@ -51,9 +60,30 @@ const CampaignPage = () => {
           <Typography level="body-sm">
             End Date: {campaignData.endDate}
           </Typography>
-          <Button sx={{ mt: 1 }} onClick={() => alert('Applied to Campaign')}>
+          <Button sx={{ mt: 1 }} onClick={handleOpen}>
             Apply to Campaign
           </Button>
+
+          <Modal open={open} onClose={handleClose}>
+            <ModalDialog sx={{ 
+                width: ['90%', '60%', '40%'], 
+                maxWidth: '600px', 
+                mx: 'auto',
+                p: 3,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 2
+              }}>
+              <ModalClose />
+              <Typography align="center">Application Submitted</Typography>
+              <Typography align="center">Your application has been submitted and is under review. It will appear in 'Your Campaigns' if selected.</Typography>
+              <Link to="/home">
+                <Button onClick={handleClose}>Go to Your Campaigns</Button>
+              </Link>
+            </ModalDialog>
+          </Modal>
         </Sheet>
       </CssVarsProvider>
     );

@@ -3,11 +3,10 @@ import AspectRatio from '@mui/joy/AspectRatio';
 import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
-import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
-import BookmarkAdd from '@mui/icons-material/BookmarkAddOutlined';
+import { Link } from 'react-router-dom';
 
-export default function BasicCard() {
+export default function WorkCampaignCard() {
   return (
     <Card variant="outlined" sx={{ width: 320 }}>
       <div>
@@ -32,11 +31,13 @@ export default function BasicCard() {
         <Button
           variant="solid"
           size="md"
-          color="primary"
-          aria-label="Explore Bahamas Islands"
+          color="success" // Assuming the theme has 'success' mapped to green
+          aria-label="Create Content"
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
         >
-          KNOW MORE
+          <Link style={{ textDecoration: 'none', color: 'white' }} to="/instructions">
+            CREATE CONTENT
+          </Link>
         </Button>
       </CardContent>
     </Card>
