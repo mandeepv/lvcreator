@@ -18,21 +18,19 @@ export default function TabsPageExample() {
   return (
     <CssVarsProvider>
       <Sheet
-  sx={{
-    width: { xs: '100%', md: 500 },
-    mx: 'auto',
-    my: 4,
-    py: 3,
-    px: { xs: 1, md: 2 },
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 2,
-    borderRadius: 'sm',
-    boxShadow: 'md',
-    overflowX: 'hidden', // add this line
-  }}
->
-
+        sx={{
+          width: { xs: '100%', md: 500 },
+          mx: 'auto',
+          my: 4,
+          py: 3,
+          px: { xs: 1, md: 2 },
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+          borderRadius: 'sm',
+          boxShadow: 'md',
+        }}
+      >
       
     <Box
       sx={{
@@ -73,7 +71,7 @@ export default function TabsPageExample() {
             Your Campaigns{' '}
             <Chip
               size="sm"
-              variant="soft"
+              variant="soft"    
               color={index === 0 ? 'primary' : 'neutral'}
               sx={{ ml: 1 }}
             >
@@ -98,17 +96,25 @@ export default function TabsPageExample() {
             background: 'var(--bg)',
             boxShadow: '0 0 0 100vmax var(--bg)',
             clipPath: 'inset(0 -100vmax)',
+            display: 'flex',
           })}
         >
-          <TabPanel value={0}>
+          <TabPanel value={0} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
             <Typography
               level="h2"
               component="div"
               fontSize="lg"
               textColor="text.primary"
+              
             >
               Deals panel
             </Typography>
+        
+
+
+
+
           </TabPanel>
           <TabPanel value={1}>
             <Typography
@@ -117,15 +123,12 @@ export default function TabsPageExample() {
               fontSize="lg"
               textColor="text.primary"
             >
-              <BasicCard />
+              <BasicCard/>
+              <br/>
+              <BasicCard/>
+              <br/>
+              <BasicCard/>
             </Typography>
-          </TabPanel>
-          <TabPanel value={2}>
-            <Input
-              autoFocus
-              placeholder="Type in third panel..."
-              startDecorator={<SearchRounded />}
-            />
           </TabPanel>
         </Box>
       </Tabs>

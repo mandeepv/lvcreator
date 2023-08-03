@@ -11,17 +11,7 @@ export default function BasicCard() {
   return (
     <Card variant="outlined" sx={{ width: 320 }}>
       <div>
-        <Typography level="title-lg">Yosemite National Park</Typography>
-        <Typography level="body-sm">April 24 to May 02, 2021</Typography>
-        <IconButton
-          aria-label="bookmark Bahamas Islands"
-          variant="plain"
-          color="neutral"
-          size="sm"
-          sx={{ position: 'absolute', top: '0.875rem', right: '0.5rem' }}
-        >
-          <BookmarkAdd />
-        </IconButton>
+        <Typography level="title-lg">Zomato</Typography>
       </div>
       <AspectRatio minHeight="120px" maxHeight="200px">
         <img
@@ -33,9 +23,10 @@ export default function BasicCard() {
       </AspectRatio>
       <CardContent orientation="horizontal">
         <div>
-          <Typography level="body-xs">Total price:</Typography>
+          <Typography level="body-xs">Campaign Price</Typography>
+          <br/>
           <Typography fontSize="lg" fontWeight="lg">
-            $2,900
+            ₹200-₹1000
           </Typography>
         </div>
         <Button
@@ -45,7 +36,7 @@ export default function BasicCard() {
           aria-label="Explore Bahamas Islands"
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
         >
-          Explore
+          KNOW MORE
         </Button>
       </CardContent>
     </Card>
