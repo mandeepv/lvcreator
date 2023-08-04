@@ -10,6 +10,7 @@ import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
 import Link from '@mui/joy/Link';
 import { useNavigate } from 'react-router-dom';
+import NavBar from '../components/NavBar';
 
 const SignInPage = () => {
     const [data, setData] = useState(null);
@@ -44,6 +45,7 @@ const SignInPage = () => {
             boxShadow: 'md',
           }}
         >
+          <NavBar showMenuButton = {false}/>
           <form onSubmit={handleSubmit}>  {/* Change here */}
             <div>
               <Typography level="h4" component="h1">

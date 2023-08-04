@@ -13,35 +13,48 @@ import React from 'react';
 import CampaignCard from '../components/CampaignCard';
 import AppliedCampaignCard from '../components/AppliedCampaignCard';
 import WorkCampaignCard from '../components/WorkCampaignCard';
+import UnderReviewCampaignCard from '../components/UnderReviewCampaignCard';
+import NavBar from '../components/NavBar';
+import Card from '@mui/joy/Card';
+
+import IconButton from '@mui/joy/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+
+import Dropdown from '@mui/joy/Dropdown';
+import Menu from '@mui/joy/Menu';
+import MenuButton from '@mui/joy/MenuButton';
+import MenuItem from '@mui/joy/MenuItem';
+import MoreVert from '@mui/icons-material/MoreVert';
 
 
 export default function TabsPageExample() {
   const [index, setIndex] = React.useState(0);
   return (
     <CssVarsProvider>
+      
       <Sheet
         sx={{
           width: { xs: '100%', md: 500 },
           mx: 'auto',
-          my: 4,
-          py: 3,
+          my: 1,
+          py: 0,
           px: { xs: 1, md: 2 },
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
           borderRadius: 'sm',
           boxShadow: 'md',
+          backgroundColor: 'transparent',  
         }}
       >
-      
     <Box
       sx={{
         flexGrow: 1,
-        m: -3,
-        overflowX: 'hidden',
+
         borderRadius: 'md',
       }}
     >
+<NavBar showMenuButton/>
       <Tabs
         aria-label="Pipeline"
         value={index}
@@ -77,7 +90,7 @@ export default function TabsPageExample() {
               color={index === 0 ? 'primary' : 'neutral'}
               sx={{ ml: 1 }}
             >
-              1
+              2
             </Chip>
           </Tab>
           <Tab indicatorInset>
@@ -92,15 +105,6 @@ export default function TabsPageExample() {
             </Chip>
           </Tab>
         </TabList>
-        <Box
-          sx={(theme) => ({
-            '--bg': theme.vars.palette.background.surface,
-            background: 'var(--bg)',
-            boxShadow: '0 0 0 100vmax var(--bg)',
-            clipPath: 'inset(0 -100vmax)',
-            display: 'flex',
-          })}
-        >
           <TabPanel value={0} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 
             <Typography
@@ -111,6 +115,8 @@ export default function TabsPageExample() {
               
             >
               <WorkCampaignCard/>
+              <br/>
+              <UnderReviewCampaignCard/>
             </Typography>
         
 
@@ -118,7 +124,7 @@ export default function TabsPageExample() {
 
 
           </TabPanel>
-          <TabPanel value={1}>
+          <TabPanel value={1} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Typography
               level="h2"
               component="div"
@@ -132,9 +138,10 @@ export default function TabsPageExample() {
               <AppliedCampaignCard/>
               <br/>
               <AppliedCampaignCard/>
+
             </Typography>
           </TabPanel>
-        </Box>
+
       </Tabs>
     </Box>
     </Sheet>

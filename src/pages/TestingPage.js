@@ -28,6 +28,8 @@ const TestingPage = () => {
           <Button onClick={() => navigate("/signin")}>Go to Sign In Page</Button>
           <Button onClick={() => navigate("/home")}>Go to Home Page</Button>
           <Button onClick={() => navigate("/campaign")}>Go to Campaign Page</Button>
+          <Button onClick={() => navigate("/instructions")}>Go to Guidelines Page</Button>
+          <Button onClick={() => navigate("/profile")}>Go to Profile Page</Button>
         </Sheet>
       </CssVarsProvider>
     );

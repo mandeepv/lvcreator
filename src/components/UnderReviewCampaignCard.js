@@ -4,9 +4,8 @@ import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import { Link } from 'react-router-dom';
 
-export default function WorkCampaignCard() {
+export default function UnderReviewCampaignCard() {
   return (
     <Card variant="outlined" sx={{ width: 320 }}>
       <div>
@@ -31,15 +30,12 @@ export default function WorkCampaignCard() {
         <Button
           variant="solid"
           size="md"
-          color="success" // Assuming the theme has 'success' mapped to green
-          aria-label="Create Content"
+          color="gray"
+          disabled={true}
+          aria-label="Under Review"
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
         >
-          <Link style={{ textDecoration: 'none', color: 'white' }}
-          to={{
-            pathname: "/instructions",
-          }}
-        >CREATE CONTENT</Link>
+          UNDER REVIEW
         </Button>
       </CardContent>
     </Card>
