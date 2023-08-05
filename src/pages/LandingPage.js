@@ -104,6 +104,7 @@ const LandingPage = () => {
               sx={{
                 textAlign: 'center',
                 mb: 3, // Bottom margin, adjust as needed
+                px: 2, // Added padding to the left and right
               }}
             >
               Unlock your full potential and grow with our marketing platform.
