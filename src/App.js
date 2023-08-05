@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Routes }from 'react-router-dom';
 import CampaignInstructionsPage from './pages/CampaignInstructionsPage';
 import NavBarTester from './pages/NavBarTester';
 import InfluencerProfilePage from './pages/InfluencerProfilePage';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/campaign" element={<CampaignPage />} />
         <Route path="/instructions" element={<CampaignInstructionsPage />} />
         <Route path='/profile' element={<InfluencerProfilePage />} />
+        <Route path='/' element={<LandingPage />} />
 
 
 

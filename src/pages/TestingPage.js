@@ -30,6 +30,7 @@ const TestingPage = () => {
           <Button onClick={() => navigate("/campaign")}>Go to Campaign Page</Button>
           <Button onClick={() => navigate("/instructions")}>Go to Guidelines Page</Button>
           <Button onClick={() => navigate("/profile")}>Go to Profile Page</Button>
+          <Button onClick={() => navigate("/")}>Go to greates buttons mankind has ever seen</Button>
         </Sheet>
       </CssVarsProvider>
     );
