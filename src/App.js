@@ -28,10 +28,6 @@ function App() {
         <Route path='/profile' element={<InfluencerProfilePage />} />
         <Route path='/' element={<LandingPage />} />
 
-
-
-
-        
         <Route path="/testNav" element={<NavBarTester />} />
       </Routes>
     </Router>
