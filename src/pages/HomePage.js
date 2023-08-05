@@ -90,25 +90,29 @@ export default function TabsPageExample() {
                 </Chip>
               </Tab>
             </TabList>
-            <TabPanel value={0} sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
-    <WorkCampaignCard />
-  </Box>
-  <Box sx={{ maxWidth: '500px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+
+            <TabPanel value={0} sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, justifyContent: 'center', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+
+
+<Box sx={{ maxWidth: '500px', width: '100%', marginBottom: { xs: 4, lg: 2 }, display: 'flex', justifyContent: 'center' }}>
+  <WorkCampaignCard />
+</Box>
+
+  <Box sx={{ maxWidth: '500px', width: '100%', display: 'flex', justifyContent: 'center', m:0, p:0 }}>
     <UnderReviewCampaignCard />
   </Box>
 </TabPanel>
 <TabPanel value={1} sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
+<Box sx={{ maxWidth: '500px', width: '100%', marginBottom: { xs: 4, lg: 2 }, display: 'flex', justifyContent: 'center' }}>
     <CampaignCard />
   </Box>
-  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
+  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: { xs: 4, lg: 2 }, display: 'flex', justifyContent: 'center' }}>
     <CampaignCard />
   </Box>
-  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: 2, display: 'flex', justifyContent: 'center' }}>
+  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: { xs: 4, lg: 2 }, display: 'flex', justifyContent: 'center' }}>
     <AppliedCampaignCard />
   </Box>
-  <Box sx={{ maxWidth: '500px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+  <Box sx={{ maxWidth: '500px', width: '100%', marginBottom: { xs: 4, lg: 2 }, display: 'flex', justifyContent: 'center' }}>
     <AppliedCampaignCard />
   </Box>
 </TabPanel>
