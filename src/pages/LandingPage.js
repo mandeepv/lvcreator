@@ -8,6 +8,7 @@ import Card from '@mui/joy/Card';
 import HeroPic from '../assets/images/hero-divider-1500w.png'
 import Button from '@mui/joy/Button';
 import { styled } from '@mui/system';  
+import { useNavigate, Link } from 'react-router-dom';
 
 const CustomButton = styled(Button)({
     color: '#000',
@@ -31,6 +32,7 @@ const CustomButton = styled(Button)({
 });
 
 const LandingPage = () => {
+    const navigate = useNavigate();
   return (
     <CssVarsProvider>
       <Sheet
@@ -48,7 +50,7 @@ const LandingPage = () => {
           backgroundColor: 'transparent',
         }}
       >
-        <NavBar showMenuButton />
+        <NavBar showMenuButton={false} />
       </Sheet>
 
       <Sheet
@@ -110,12 +112,25 @@ const LandingPage = () => {
               Unlock your full potential and grow with our marketing platform.
             </Typography>
             <Box sx={{ display: 'flex', gap: 2, mb: { xs: 2, sm: 2, md: 4 }, mt:2 }}>
-              <CustomButton>
-                SIGN ME UP!
-              </CustomButton>
-              <CustomButton>
-                LOGIN
-              </CustomButton>
+                
+            <CustomButton
+  onClick={() => {
+    setTimeout(() => {
+      navigate('/signup')
+    }, 200);  // delay in milliseconds
+  }}
+>
+  SIGN ME UP!
+</CustomButton>
+<CustomButton
+  onClick={() => {
+    setTimeout(() => {
+      navigate('/signin')
+    }, 200);  // delay in milliseconds
+  }}
+>
+  LOGIN
+</CustomButton>
             </Box>
             <Box
               sx={{
