@@ -1,13 +1,10 @@
 import Box from '@mui/joy/Box';
-import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/joy/Typography';
 import { CssVarsProvider } from '@mui/joy';
 import Sheet from '@mui/joy/Sheet';
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
 import Card from '@mui/joy/Card';
-import IconButton from '@mui/joy/IconButton';
-import MoreVert from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/joy';
 
 export default function InfluencerProfilePage() {
@@ -36,7 +33,7 @@ export default function InfluencerProfilePage() {
     <CssVarsProvider>
       <Sheet
         sx={{
-          width: { xs: '100%', md: 500 },
+          width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' }, // Matching CampaignPage
           mx: 'auto',
           my: 1,
           py: 0,
@@ -50,7 +47,7 @@ export default function InfluencerProfilePage() {
         }}
       >
         <Box sx={{ flexGrow: 1, borderRadius: 'md' }}>
-          <NavBar showMenuButton/>
+          <NavBar showMenuButton />
           <Card
             sx={{
               display: 'flex',
@@ -65,48 +62,48 @@ export default function InfluencerProfilePage() {
             <Typography variant="h5">Followers: 3000</Typography>
             <Typography variant="h5">Following: 500</Typography>
           </Card>
-
           <Card
-            sx={{
-              margin: '1em 0',
-              padding: '1em',
-            }}
-          >
-            <Typography variant="h6">Social Media Handles:</Typography>
-            {Object.entries(socials).map(([platform, handle]) => (
-              <Box
-                key={platform}
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  margin: '0.5em 0',
-                }}
-              >
-                {editPlatform === platform ? (
-                  <form onSubmit={() => handleSocialUpdate(platform, newHandle)}>
-                    <input
-                      type="text"
-                      value={newHandle}
-                      onChange={(e) => setNewHandle(e.target.value)}
-                    />
-                    <Button type="submit" color="primary" variant="contained">
-                      Save
-                    </Button>
-                  </form>
-                ) : (
-                  <>
-                    <Typography variant="body1">
-                      {platform}: {handle}
-                    </Typography>
-                    <Button color="primary" variant="contained" onClick={() => startEdit(platform)}>
-                      Update
-                    </Button>
-                  </>
-                )}
-              </Box>
-            ))}
-          </Card>
+  sx={{
+    margin: '1em 0',
+    padding: '1em',
+  }}
+>
+  <Typography variant="h6" align="center">Social Media Handles:</Typography>
+  {Object.entries(socials).map(([platform, handle]) => (
+    <Box
+      key={platform}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center', // Center aligning
+        alignItems: 'center',
+        margin: '0.5em 0',
+      }}
+    >
+      {editPlatform === platform ? (
+        <form onSubmit={() => handleSocialUpdate(platform, newHandle)}>
+          <input
+            type="text"
+            value={newHandle}
+            onChange={(e) => setNewHandle(e.target.value)}
+          />
+          <Button type="submit" color="primary" variant="contained">
+            Save
+          </Button>
+        </form>
+      ) : (
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}> {/* Adjusting gap */}
+          <Typography variant="body1" align="center">
+            {platform}: {handle}
+          </Typography>
+          <Button color="primary" variant="contained" onClick={() => startEdit(platform)}>
+            Update
+          </Button>
+        </Box>
+      )}
+    </Box>
+  ))}
+</Card>
+
         </Box>
       </Sheet>
     </CssVarsProvider>

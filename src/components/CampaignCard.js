@@ -30,6 +30,11 @@ export default function CampaignCard() {
             ₹200-₹1000
           </Typography>
         </div>
+
+
+
+
+        
         <Button
           variant="solid"
           size="md"
@@ -38,11 +43,7 @@ export default function CampaignCard() {
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
           onClick={() => navigate('/campaign')}
         >
-           <Link style={{ textDecoration: 'none', color: 'white' }}
-          to={{
-            pathname: "/campaign",
-          }}
-        >KNOW MORE</Link>
+           KNOW MORE
         </Button>
       </CardContent>
     </Card>

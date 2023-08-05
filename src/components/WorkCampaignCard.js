@@ -5,8 +5,10 @@ import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function WorkCampaignCard() {
+  const navigate = useNavigate();
   return (
     <Card variant="outlined" sx={{ width: 320 }}>
       <div>
@@ -34,12 +36,9 @@ export default function WorkCampaignCard() {
           color="success" // Assuming the theme has 'success' mapped to green
           aria-label="Create Content"
           sx={{ ml: 'auto', alignSelf: 'center', fontWeight: 600 }}
+          onClick={() => navigate('/instructions')}
         >
-          <Link style={{ textDecoration: 'none', color: 'white' }}
-          to={{
-            pathname: "/instructions",
-          }}
-        >CREATE CONTENT</Link>
+          CREATE CONTENT
         </Button>
       </CardContent>
     </Card>

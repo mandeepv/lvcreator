@@ -4,29 +4,50 @@ import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
-import '@fontsource/inter';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Modal from '@mui/joy/Modal';
 import { ModalDialog } from '@mui/joy';
 import { ModalClose } from '@mui/joy';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/NavBar'; // Make sure to import your NavBar component correctly
 
 const CampaignInstructionsPage = () => {
+  const [open, setOpen] = useState(false);
 
-    const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
-
-    return (
-      <CssVarsProvider>
+  return (
+    <CssVarsProvider>
+      <Sheet
+        sx={{
+          width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' },
+          mx: 'auto',
+          my: 1,
+          py: 0,
+          px: { xs: 1, md: 2 },
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+          borderRadius: 'sm',
+          boxShadow: 'md',
+          backgroundColor: 'transparent',
+        }}
+      >
+        <NavBar showMenuButton />
         <Sheet
           sx={{
-            width: 300,
+            width: {
+              xs: '300px',
+              sm: '300px',
+              md: '400px',
+              lg: '600px',
+              xl: '800px',
+            },
             mx: 'auto',
             my: 4,
             py: 3,
-            px: 2,
+            px: { xs: 2, sm: 2, md: 3, lg: 4, xl: 5 },
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
@@ -51,30 +72,33 @@ const CampaignInstructionsPage = () => {
             We can't wait to see what you create. If you have any questions, don't hesitate to reach out to our team. Happy creating!
           </Typography>
           <Input type="text"></Input><Button onClick={handleOpen}>SUBMIT POST LINK</Button>
-
-
-          <Modal open={open} onClose={handleClose}>
-            <ModalDialog sx={{ 
-                width: ['90%', '60%', '40%'], 
-                maxWidth: '600px', 
-                mx: 'auto',
-                p: 3,
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: 2
-              }}>
-              <ModalClose />
-              <Typography align="center">Content Submitted</Typography>
-              <Typography align="center">Your content has been submitted and is under review. We'll pay you as soon as the content passes the reviews.</Typography>
-              <Link to="/home">
-                <Button onClick={handleClose}>Go to Your Campaigns</Button>
-              </Link>
-            </ModalDialog>
-          </Modal>
         </Sheet>
-      </CssVarsProvider>
-    );
+      </Sheet>
+      <Modal open={open} onClose={handleClose}>
+        <ModalDialog
+          sx={{
+            width: ['90%', '60%', '40%'],
+            maxWidth: '600px',
+            mx: 'auto',
+            p: 3,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 2,
+          }}
+        >
+          <ModalClose />
+          <Typography align="center">Content Submitted</Typography>
+          <Typography align="center">
+            Your content has been submitted and is under review. We'll pay you as soon as the content passes the reviews.
+          </Typography>
+          <Link to="/home">
+            <Button onClick={handleClose}>Go to Your Campaigns</Button>
+          </Link>
+        </ModalDialog>
+      </Modal>
+    </CssVarsProvider>
+  );
 };
 export default CampaignInstructionsPage;
