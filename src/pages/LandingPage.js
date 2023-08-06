@@ -9,6 +9,7 @@ import HeroPic from '../assets/images/hero-divider-1500w.png'
 import Button from '@mui/joy/Button';
 import { styled } from '@mui/system';  
 import { useNavigate, Link } from 'react-router-dom';
+import BaseCard from '../components/BaseCard';
 
 const CustomButton = styled(Button)({
     color: '#000',
@@ -35,59 +36,12 @@ const LandingPage = () => {
     const navigate = useNavigate();
   return (
     <CssVarsProvider>
-      <Sheet
-        sx={{
-          width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' },
-          mx: 'auto',
-          my: 1,
-          py: 0,
-          px: { xs: 1, md: 2 },
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          borderRadius: 'sm',
-          boxShadow: 'md',
-          backgroundColor: 'transparent',
-        }}
-      >
         <NavBar showMenuButton={false} />
-      </Sheet>
 
-      <Sheet
-        sx={{
-          width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' },
-          mx: 'auto',
-          my: 1,
-          py: 0,
-          px: { xs: 1, md: 2 },
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2,
-          borderRadius: 'sm',
-          boxShadow: 'md',
-          backgroundColor: 'transparent',
-        }}
-      >
-        <Box
-          sx={{
-            flexGrow: 1,
-            borderRadius: 'md',
-          }}
-        >
-          <Card
-            size="md"
-            variant="solid"
-            sx={{
-              bgcolor: '#6c07ff',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              overflow: 'hidden',
-              padding: 0,
-            }}
-          >
+      <BaseCard>
+    
+     
+     
             <Typography
               level="h1"
               component="h1"
@@ -142,9 +96,7 @@ const LandingPage = () => {
                 backgroundRepeat: 'no-repeat',
               }}
             />
-          </Card>
-        </Box>
-      </Sheet>
+           </BaseCard>
     </CssVarsProvider>
   );
 };
