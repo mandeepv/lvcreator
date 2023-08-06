@@ -14,7 +14,7 @@ import FormLabel from '@mui/joy/FormLabel';
 import Input from '@mui/joy/Input';
 import HeroPic from '../assets/images/hero-divider-1500w.png'
 import Link from '@mui/joy/Link';
-
+import BaseCard from '../components/BaseCard';
 const CustomButton = styled(Button)({
     color: '#000',
     cursor: 'pointer',
@@ -52,58 +52,8 @@ const SignInPage = () => {
     
     return (
         <CssVarsProvider>
-            <Sheet
-                sx={{
-                    width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' },
-                    mx: 'auto',
-                    my: 1,
-                    py: 0,
-                    px: { xs: 1, md: 2 },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 2,
-                    borderRadius: 'sm',
-                    boxShadow: 'md',
-                    backgroundColor: 'transparent',
-                }}
-            >
                 <NavBar showMenuButton={false} />
-            </Sheet>
-            <Sheet
-                sx={{
-                    width: { xs: '100%', md: '100%', lg: '98%', xl: '100%' },
-                    mx: 'auto',
-                    my: 1,
-                    py: 0,
-                    px: { xs: 1, md: 2 },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: 2,
-                    borderRadius: 'sm',
-                    boxShadow: 'md',
-                    backgroundColor: 'transparent',
-                }}
-            >
-                <Box
-                    sx={{
-                        flexGrow: 1,
-                        borderRadius: 'md',
-                    }}
-                >
-                    <Card
-                        size="md"
-                        variant="solid"
-                        sx={{
-                            bgcolor: '#6c07ff',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#fff',
-                            overflow: 'hidden',
-                            padding: 0,
-                        }}
-                    >
+                <BaseCard>
                         <Card
                             sx={{
                                 backgroundColor: '#9ddadb',
@@ -165,9 +115,7 @@ const SignInPage = () => {
                 backgroundRepeat: 'no-repeat',
               }}
             />
-                    </Card>
-                </Box>
-            </Sheet>
+                    </BaseCard>
         </CssVarsProvider>
     );
 };
